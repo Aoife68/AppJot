@@ -1,0 +1,18 @@
+{{#each ideas}}
+  <div class="card card-body mb-2">
+    <h4>{{title}}</h4>
+    <p><b>Application Overview:</b></p>
+    <p>{{details}}</p>
+    <p><b>Focal points:</b></p>
+    <ul>
+      <li>{{points}}</li>
+    </ul>    
+    <a class="btn btn-dark btn-block mb-2" href="/ideas/edit/{{id}}">Edit</a>
+    <form action="/ideas/{{id}}?_method=DELETE" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block" value="Delete">
+    </form>
+  </div>
+{{else}}
+  <p>No applications ideas listed</p>
+{{/each}}
